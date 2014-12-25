@@ -1,0 +1,18 @@
+#running hbase shell
+hbase shell
+
+#create table
+create 'tbl_name', 'col_fam1', 'col_fam2'
+
+#describe table
+describe 'tbl_name'
+
+#update meta data of table ===> ENABLES REPLICATION
+alter 'tbl_name', {'NAME' =>'col_fam1', 'REPLICATION_SCOPE'=>'1'}
+
+#update meta data of table ===> Loads the column family into memory
+alter 'tbl_name', {'NAME' =>'col_fam1', 'IN_MEMORY'=>'TRUE'}
+
+#update meta data of table ===> Loads the column family into memory
+alter 'tbl_name', {'NAME' =>'col_fam1', 'COMPRESSION' => 'GZ'}, {'NAME' = 'col_fam2', 'COMPRESSION' => 'GZ'}
+
